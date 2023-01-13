@@ -57,13 +57,19 @@
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/button_volver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25px"
+        android:onClick="Salir"
+        android:text="@string/button_salir"
+        android:textSize="20dp" />
+
+    <Button
         android:id="@+id/button_eliminar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25px"
-        android:onClick="RegistrarUsuario"
         android:text="@string/button_eliminar"
         android:textSize="20sp" />
-
-
 </LinearLayout>

@@ -1,13 +1,16 @@
 package com.nadershamma.apps.androidfunwithflags;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import DatosUser.UserData;
+import Helper_DB.DataBase_Helper;
 
 public class RegistrarAuxActivity extends AppCompatActivity {
 
@@ -16,11 +19,14 @@ public class RegistrarAuxActivity extends AppCompatActivity {
     private EditText textApellido;
     private EditText textCorreo;
     private EditText textClave;
+    private Button button_EliminarUsuario;
     //private String correo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrar);
+        setContentView(R.layout.activity_registrar_aux);
+
+        button_EliminarUsuario = findViewById(R.id.button_eliminar);
 
         textCedula = findViewById(R.id.txt_cedula);
         String cedula=getIntent().getExtras().getString("cedula");
@@ -83,6 +89,30 @@ public class RegistrarAuxActivity extends AppCompatActivity {
     }
 
 
+
+    private void EliminarUsuario() {
+        String correo = textCorreo.getText().toString();
+
+        try {
+            DataBase_Helper dbHelper = new DataBase_Helper(this);
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+            int count = db.delete("usuarios","correo= '"+correo+"'",null);
+
+            db.close();
+
+            if(count != 0){
+                Toast.makeText(this,"Usuario Eliminado",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this,login_activity.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(this,"Registro no Eliminado",Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (Exception ex) {
+            ex.toString();
+        }
+    }
     private void Limpiar(){
         textCedula.setText("");
         textNombre.setText("");
