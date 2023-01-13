@@ -16,16 +16,24 @@ public class RegistrarActivity extends AppCompatActivity {
     private EditText textApellido;
     private EditText textCorreo;
     private EditText textClave;
-
+    private String correo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
 
         textCedula = findViewById(R.id.txt_cedula);
+        //textCedula.setText(getIntent().getExtras().getString("cedula"));
+        //if (textCedula==null) textCedula.setText("");
         textNombre = findViewById(R.id.txt_nombre);
         textApellido = findViewById(R.id.txt_apellido);
         textCorreo = findViewById(R.id.txt_correo);
+        /*
+        correo=getIntent().getExtras().getString("correo");
+
+        if (correo.isEmpty()) {textCedula.setText("");}
+        else   {textCorreo.setText(correo);}
+*/
         textClave = findViewById(R.id.txt_clave);
     }
 

@@ -24,7 +24,7 @@
     <string name="hint_password">Ingrese su Password</string>
     <string name="titulo_finjuego">Fin del Juego</string>
 
-    <string name="button_salir">OK</string>
+    <string name="button_salir">Volver</string>
     <string name="hint_cedula">Cédula:</string>
     <string name="hint_nombreI">Nombre:</string>
     <string name="hint_apellido">Apellido:</string>

@@ -83,14 +83,14 @@ public class MainActivity extends AppCompatActivity {
         nombreuser = findViewById(R.id.textView_nombre);
         String nombre = getIntent().getExtras().getString("nombre");
         nombreuser.setText(nombre);
-/*
+
         buttonEdit = findViewById(R.id.buttonEditUser);
         buttonEdit.setOnClickListener(new View.OnClickListener(){
                                                    @Override
                                                    public void onClick(View view) {
-                                                       Intent intent = new Intent(MainActivity.this, RegistrarActivity.class);
+                                                       Intent intent = new Intent(MainActivity.this, RegistrarAuxActivity.class);
                                                        intent.putExtra("cedula", cedula);
-                                                       intent.putExtra("nombre", nombre);
+                                                       intent.putExtra("nombre1", nombre);
                                                        intent.putExtra("apellido", apellido);
                                                        intent.putExtra("clave", clave);
                                                        intent.putExtra("correo", correo);
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                                                    }
                                                }
         );
-*/
+
     }
 
     @Override
