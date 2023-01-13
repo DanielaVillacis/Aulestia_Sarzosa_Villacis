@@ -40,6 +40,27 @@ public class UserData extends DataBase_Helper {
         return id;
     }
 
+    public User devolverUser(String correo){
+        DataBase_Helper dbHelper = new DataBase_Helper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        User usuario = null;
+        Cursor cursorUsuario;
+
+        cursorUsuario = db.rawQuery("SELECT * FROM " + TABLE_NOMBRE + " WHERE correo = '" + correo + "' LIMIT 1", null);
+        if (cursorUsuario.moveToFirst()) {
+            usuario = new User();
+            usuario.setId(cursorUsuario.getInt(0));
+            usuario.setCedula(cursorUsuario.getString(1));
+            usuario.setNombre(cursorUsuario.getString(2));
+            usuario.setApellido(cursorUsuario.getString(3));
+            usuario.setCorreo(cursorUsuario.getString(4));
+            usuario.setClave(cursorUsuario.getString(5));
+        }
+        cursorUsuario.close();
+        return usuario;
+    }
+
     public User login(String correo, String clave) {
 
         DataBase_Helper dbHelper = new DataBase_Helper(context);

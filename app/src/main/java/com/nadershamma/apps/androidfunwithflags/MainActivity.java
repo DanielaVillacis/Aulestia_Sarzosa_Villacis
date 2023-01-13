@@ -55,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         this.setSharedPreferences();
         this.screenSetUp();
+
+
+        String correo = getIntent().getExtras().getString("correo");
+
+
     }
 
     @Override

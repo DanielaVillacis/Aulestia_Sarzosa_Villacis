@@ -30,4 +30,6 @@
     <string name="hint_correo">Correo:</string>
     <string name="hint_clave">Clave:</string>
     <string name="button_registrar">Registrar</string>
+
+    <string name="button_cerrarSesion">Cerrar Sesión</string>
 </resources>

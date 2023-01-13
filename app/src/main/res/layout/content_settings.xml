@@ -3,6 +3,6 @@
     android:id="@+id/settingsFragment"
     android:name="com.nadershamma.apps.androidfunwithflags.SettingsActivityFragment"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:layout="@layout/fragment_settings" />
 

@@ -35,7 +35,7 @@ public class login_activity extends AppCompatActivity {
             if(usuario != null)
             {
                 Intent intent = new Intent(this,MainActivity.class);
-                intent.putExtra("nombre", (usuario.getNombre() + " " + usuario.getApellido()));
+                intent.putExtra("correo", (usuario.getNombre() + " " + usuario.getApellido()));
                 startActivity(intent);
             }
             else
