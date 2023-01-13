@@ -46,7 +46,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25px"
+        android:backgroundTint="@color/colorAccent"
         android:onClick="IniciarSesion"
+        android:shadowColor="#29B6F6"
         android:text="Ingresar" />
 
     <Button
@@ -54,6 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25px"
+        android:backgroundTint="@color/colorAccent"
         android:onClick="Registrar"
         android:text="Registrar" />
 </LinearLayout>

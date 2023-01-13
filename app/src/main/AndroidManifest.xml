@@ -13,9 +13,6 @@
             android:name=".RegistrarActivity"
             android:exported="false" />
         <activity
-            android:name=".resultados"
-            android:exported="false" />
-        <activity
             android:name=".login_activity"
             android:exported="true">
             <intent-filter>

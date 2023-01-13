@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Aulestia_Sarzosa_Villacis</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="title_activity_settings">Ajustes</string>
+    <string name="default_region">Europa</string>
+    <string name="number_of_choices">Número de opciones</string>
+    <string name="number_of_choices_description">Muestra 2, 4, 6 u 8 botones de adivinanza</string>
+    <string name="world_regions">Regiones</string>
+    <string name="world_regions_description">Regiones para incluir en el cuestionario</string>
+    <string name="guess_country">Adivina el país</string>
+    <string name="results">%1$d intentos, %2$.02f%% correcto</string>
+    <string name="incorrect_answer">¡Incorrecto!</string>
+    <string name="default_region_message">Se debe seleccionar una región. Configuración de Europa como la región predeterminada.</string>
+    <string name="restarting_quiz">Quiz se reiniciará con su nueva configuración</string>
+    <string name="question">Pregunta %1$d de %2$d</string>
+    <string name="reset_quiz">Restablecer prueba</string>
+    <string name="image_description">Imagen de la bandera actual en el cuestionario</string>
+
+    <string name="titulo_nombre">Correo</string>
+    <string name="titulo_password">Contraseña</string>
+    <string name="hint_nombre">Ingrese su Correo</string>
+    <string name="hint_password">Ingrese su Contraseña</string>
+    <string name="titulo_finjuego">Fin del Juego</string>
+
+    <string name="button_salir">OK</string>
+    <string name="hint_cedula">Cédula:</string>
+    <string name="hint_nombreI">Nombre:</string>
+    <string name="hint_apellido">Apellido:</string>
+    <string name="hint_correo">Correo:</string>
+    <string name="hint_clave">Clave:</string>
+    <string name="button_registrar">Registrar</string>
+</resources>
