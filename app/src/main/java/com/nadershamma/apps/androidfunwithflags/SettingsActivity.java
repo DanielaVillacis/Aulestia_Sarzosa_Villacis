@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class SettingsActivity extends AppCompatActivity{
     private Button button_CerrarSesion;
+    private Button button_EditUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,6 +17,7 @@ public class SettingsActivity extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         button_CerrarSesion = findViewById(R.id.buttonCerrarSesion);
         button_CerrarSesion.setOnClickListener(new View.OnClickListener(){

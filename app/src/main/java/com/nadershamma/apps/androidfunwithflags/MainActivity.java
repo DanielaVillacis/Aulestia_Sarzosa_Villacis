@@ -11,11 +11,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.nadershamma.apps.eventhandlers.PreferenceChangeListener;
 import com.nadershamma.apps.lifecyclehelpers.QuizViewModel;
 
 import java.util.Set;
+
+import DatosUser.UserData;
+import Entities.User;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CHOICES = "pref_numberOfChoices";
@@ -25,6 +31,17 @@ public class MainActivity extends AppCompatActivity {
     private MainActivityFragment quizFragment;
     private QuizViewModel quizViewModel;
     private OnSharedPreferenceChangeListener preferencesChangeListener;
+
+    private TextView nombreuser;
+    private Button buttonEdit;
+    private String cedula;
+    private String nombre1;
+    private String apellido;
+    private String clave;
+
+
+    private String correo;
+
 
     private void setSharedPreferences() {
         // set default values in the app's SharedPreferences
@@ -57,9 +74,31 @@ public class MainActivity extends AppCompatActivity {
         this.screenSetUp();
 
 
-        String correo = getIntent().getExtras().getString("correo");
+       cedula = getIntent().getExtras().getString("cedula");
+        nombre1 = getIntent().getExtras().getString("nombre1");
+        apellido = getIntent().getExtras().getString("apellido");
+        correo = getIntent().getExtras().getString("correo");
+        clave = getIntent().getExtras().getString("clave");
 
-
+        nombreuser = findViewById(R.id.textView_nombre);
+        String nombre = getIntent().getExtras().getString("nombre");
+        nombreuser.setText(nombre);
+/*
+        buttonEdit = findViewById(R.id.buttonEditUser);
+        buttonEdit.setOnClickListener(new View.OnClickListener(){
+                                                   @Override
+                                                   public void onClick(View view) {
+                                                       Intent intent = new Intent(MainActivity.this, RegistrarActivity.class);
+                                                       intent.putExtra("cedula", cedula);
+                                                       intent.putExtra("nombre", nombre);
+                                                       intent.putExtra("apellido", apellido);
+                                                       intent.putExtra("clave", clave);
+                                                       intent.putExtra("correo", correo);
+                                                       startActivity(intent);
+                                                   }
+                                               }
+        );
+*/
     }
 
     @Override
@@ -81,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        String correo = getIntent().getExtras().getString("correo");
+
         int orientation = getResources().getConfiguration().orientation;
         if (orientation == Configuration.ORIENTATION_PORTRAIT) {
             // Inflate the menu; this adds items to the action bar if it is present.
