@@ -28,6 +28,36 @@ public class RegistrarAuxActivity extends AppCompatActivity {
 
         button_EliminarUsuario = findViewById(R.id.button_eliminar);
 
+
+        button_EliminarUsuario.setOnClickListener(new View.OnClickListener(){
+                                                      @Override
+                                                      public void onClick(View view) {
+                                                          String correo = textCorreo.getText().toString();
+
+                                                          try {
+                                                              DataBase_Helper dbHelper = new DataBase_Helper(RegistrarAuxActivity.this);
+                                                              SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                                                              int count = db.delete("usuarios","correo= '"+correo+"'",null);
+
+                                                              db.close();
+
+                                                              if(count != 0){
+                                                                  Toast.makeText(RegistrarAuxActivity.this,"Usuario Eliminado",Toast.LENGTH_SHORT).show();
+                                                                  Intent intent = new Intent(RegistrarAuxActivity.this,login_activity.class);
+                                                                  startActivity(intent);
+                                                              }else{
+                                                                  Toast.makeText(RegistrarAuxActivity.this,"Registro no Eliminado",Toast.LENGTH_SHORT).show();
+                                                              }
+
+                                                          } catch (Exception ex) {
+                                                              ex.toString();
+                                                          }
+                                                      }
+                                                  }
+        );
+
+
         textCedula = findViewById(R.id.txt_cedula);
         String cedula=getIntent().getExtras().getString("cedula");
 
@@ -90,29 +120,10 @@ public class RegistrarAuxActivity extends AppCompatActivity {
 
 
 
-    private void EliminarUsuario() {
-        String correo = textCorreo.getText().toString();
 
-        try {
-            DataBase_Helper dbHelper = new DataBase_Helper(this);
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-            int count = db.delete("usuarios","correo= '"+correo+"'",null);
 
-            db.close();
 
-            if(count != 0){
-                Toast.makeText(this,"Usuario Eliminado",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this,login_activity.class);
-                startActivity(intent);
-            }else{
-                Toast.makeText(this,"Registro no Eliminado",Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (Exception ex) {
-            ex.toString();
-        }
-    }
     private void Limpiar(){
         textCedula.setText("");
         textNombre.setText("");
